@@ -1,6 +1,11 @@
 <header class="flex items-center justify-between p-6">
   <div class="flex items-center gap-4">
-    <img class="logo-anim" src="/images/Asset_1.svg" alt="{{ .Site.Title }}" />
+    {{ $image := resources.Get "images/Asset_1.svg" }}
+    <img
+      class="logo-anim"
+      src="{{ $image.RelPermalink }}"
+      alt="{{ .Site.Title }}"
+    />
     <div>
       <div class="text-white font-bold">HORODA GmbH</div>
       <div class="text-sm text-gray-400">
