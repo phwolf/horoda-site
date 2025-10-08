@@ -1,0 +1,4 @@
+# hugo build output
+/public/
+
+.DS_Store

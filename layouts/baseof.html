@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    {{ $styles := resources.Get "css/main.scss" | toCSS | minify | fingerprint
+    }}
+    <link rel="stylesheet" href="{{ $styles.RelPermalink }}" />
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll(".reveal").forEach((el, i) => {
+          el.style.opacity = 0;
+          el.style.transform = "translateY(20px)";
+          setTimeout(() => {
+            el.style.transition = "opacity 600ms ease, transform 600ms ease";
+            el.style.opacity = 1;
+            el.style.transform = "translateY(0)";
+          }, 80 * i);
+        });
+      });
+    </script>
+  </head>
+  <body class="antialiased">
+    {{ partial "header.html" . }} {{ block "main" . }}{{ .Content }}{{ end }}
+  </body>
+</html>
