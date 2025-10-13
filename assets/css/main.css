@@ -13,6 +13,11 @@ body {
   margin: 0;                    /* removes default body margin */
 }
 
+h6 {
+  font-weight: 100;
+  text-transform: uppercase;
+}
+
 bodyx {
   margin: 0;
   min-height: 100dvh;
@@ -21,7 +26,7 @@ bodyx {
   background:    /* faint swirl highlights */
     conic-gradient(
       from 220deg at 30% 40%,
-      rgba(33, 196, 234, 0.15) 0deg,
+      rgba(1, 208, 255, 0.15) 0deg,
       rgba(100, 133, 85, 0.05) 90deg,
       rgba(33, 196, 234, 0.12) 180deg,
       rgba(100, 133, 85, 0.1) 270deg,
@@ -30,12 +35,12 @@ bodyx {
     /* soft glow accents */
     radial-gradient(
       circle at 70% 80%,
-      rgba(100, 133, 85, 0.25),
+      rgba(81, 251, 2, 0.25),
       transparent 60%
     ),
     radial-gradient(
       circle at 20% 20%,
-      rgba(33, 196, 234, 0.3),
+      rgba(0, 5, 144, 0.3),
       transparent 70%
     ),
     /* base dark background */
