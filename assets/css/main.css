@@ -2,22 +2,49 @@
   --pico-font-family: "Space Grotesk", sans-serif;
 }
 
-bodyx {
+body {
   background-image: url("background-picture.png");
   background-size: cover;       /* makes it fill the screen */
   background-position: center;  /* centers the image */
   background-repeat: no-repeat; /* avoids tiling */
   background-attachment: fixed; /* keeps it static while scrolling (optional) */
-  height: 100dvh;                /* ensures full viewport height */
+  min-height: 100dvh;                /* ensures full viewport height */
+  height: 100%;
   margin: 0;                    /* removes default body margin */
 }
 
-body {
+bodyx {
   margin: 0;
   min-height: 100dvh;
   height: 100%;
   background: #080D29;
-  background: linear-gradient(141deg, rgba(8, 13, 41, 1) 65%, rgba(42, 125, 181, 1) 83%, rgba(177, 181, 125, 1) 100%);
+  background:    /* faint swirl highlights */
+    conic-gradient(
+      from 220deg at 30% 40%,
+      rgba(33, 196, 234, 0.15) 0deg,
+      rgba(100, 133, 85, 0.05) 90deg,
+      rgba(33, 196, 234, 0.12) 180deg,
+      rgba(100, 133, 85, 0.1) 270deg,
+      transparent 360deg
+    ),
+    /* soft glow accents */
+    radial-gradient(
+      circle at 70% 80%,
+      rgba(100, 133, 85, 0.25),
+      transparent 60%
+    ),
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(33, 196, 234, 0.3),
+      transparent 70%
+    ),
+    /* base dark background */
+    linear-gradient(
+      145deg,
+      #040818 0%,
+      #070d29 50%,
+      #0a153f 100%
+    );
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
