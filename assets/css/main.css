@@ -8,14 +8,19 @@ bodyx {
   background-position: center;  /* centers the image */
   background-repeat: no-repeat; /* avoids tiling */
   background-attachment: fixed; /* keeps it static while scrolling (optional) */
-  height: 100vh;                /* ensures full viewport height */
+  height: 100dvh;                /* ensures full viewport height */
   margin: 0;                    /* removes default body margin */
 }
 
 body {
-  height: 100vh;
+  margin: 0;
+  min-height: 100dvh;
+  height: 100%;
   background: #080D29;
   background: linear-gradient(141deg, rgba(8, 13, 41, 1) 65%, rgba(42, 125, 181, 1) 83%, rgba(177, 181, 125, 1) 100%);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .emblem-wrap img {
