@@ -23,6 +23,13 @@ body {
   background-size: cover;
 }
 
+.main-home {
+  display: flex;
+  flex-direction: column;
+  height: 100dvh;
+  justify-content: space-around;
+}
+
 .emblem-wrap img {
   height: 65px;
 }
@@ -45,6 +52,7 @@ body {
   margin-inline: auto;
   max-width: 800px; /* center grid */
   width: 100%;
+  padding-bottom: 100px;
 }
 
 .nav-grid button {
@@ -55,8 +63,13 @@ body {
   .nav-grid {
     grid-template-columns: 1fr;
     justify-content: center;
+    padding-bottom: 0px;
   }
 }
+
+/* .nav-card {
+  margin-top: 100px;
+} */
 
 /* === HORODA FUTURISTIC THEME === */
 
