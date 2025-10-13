@@ -2,6 +2,10 @@
   --pico-font-family: "Space Grotesk", sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-image: url("background-picture.webp");
   background-size: cover;       /* makes it fill the screen */
@@ -16,6 +20,14 @@ body {
 h6 {
   font-weight: 100;
   text-transform: uppercase;
+}
+
+#product-grid a {
+  text-decoration: none;
+}
+
+#product-grid a p {
+  color: #21c4ea;
 }
 
 bodyx {
@@ -97,6 +109,10 @@ bodyx {
     justify-content: center;
     padding-bottom: 0px;
   }
+}
+
+.prod-section {
+  margin-top: 50px;
 }
 
 /* .nav-card {
