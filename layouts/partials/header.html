@@ -1,21 +1,36 @@
-<header class="flex items-center justify-between p-6">
-  <div class="flex items-center gap-4">
-    {{ $image := resources.Get "images/Asset_1.svg" }}
-    <img
-      class="logo-anim"
-      src="{{ $image.RelPermalink }}"
-      alt="{{ .Site.Title }}"
-    />
-    <div>
-      <div class="text-white font-bold">HORODA GmbH</div>
-      <div class="text-sm text-gray-400">
-        Thin Film - Vacuum - Process Monitoring
+<header class="header">
+  <div class="header-inner">
+    <div class="logo-group">
+      {{ $image := resources.Get "images/Asset_2.svg" }}
+      <img
+        src="{{ $image.RelPermalink }}"
+        alt="{{ .Site.Title }}"
+        class="logo"
+      />
+      <div class="logo-text">
+        <div class="tagline">Thin Film - Vacuum - Process Monitoring</div>
       </div>
     </div>
+
+    <button class="menu-toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav">
+      {{ range .Site.Menus.main }}
+      <a href="{{ .URL }}">{{ .Name }}</a>
+      {{ end }}
+    </nav>
   </div>
-  <nav class="hidden md:flex gap-6 text-gray-300">
-    {{ range .Site.Menus.main }}
-    <a href="{{ .URL }}">{{ .Name }}</a>
-    {{ end }}
-  </nav>
 </header>
+
+<script>
+  const toggle = document.querySelector(".menu-toggle");
+  const nav = document.querySelector(".nav");
+
+  toggle.addEventListener("click", () => {
+    toggle.classList.toggle("open");
+    nav.classList.toggle("open");
+    document.querySelector("body").classList.toggle("noscroll");
+  });
+</script>
