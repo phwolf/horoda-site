@@ -92,6 +92,7 @@
   /* background: #222; */
   border-radius: 1px;
   transition: all 0.3s ease;
+  background-color: white;
 }
 
 /* Morph to X */
@@ -120,7 +121,7 @@
     width: 100%;
     height: 0;
     overflow: hidden;
-    background: rgba(255, 255, 255, 0.97);
+    background-color: #080e2a;
     flex-direction: column;
     align-items: center;
     padding-top: 100px;
@@ -132,6 +133,6 @@
 
   .nav.open {
     height: 100vh;
-    opacity: 1;
+    opacity: 0.9;
   }
 }

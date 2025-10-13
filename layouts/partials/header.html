@@ -2,9 +2,13 @@
   <div class="header-inner">
     <div class="logo-group">
       {{ $image := resources.Get "images/Asset_2.svg" }}
-      <img src="{{ $image.RelPermalink }}" alt="{{ .Site.Title }}" class="logo" />
+      <img
+        src="{{ $image.RelPermalink }}"
+        alt="{{ .Site.Title }}"
+        class="logo"
+      />
       <div class="logo-text">
-        <div class="tagline">Thin Film – Vacuum – Process Monitoring</div>
+        <div class="tagline">Thin Film - Vacuum - Process Monitoring</div>
       </div>
     </div>
 
@@ -21,12 +25,12 @@
 </header>
 
 <script>
-  const toggle = document.querySelector('.menu-toggle');
-  const nav = document.querySelector('.nav');
+  const toggle = document.querySelector(".menu-toggle");
+  const nav = document.querySelector(".nav");
 
-  toggle.addEventListener('click', () => {
-    toggle.classList.toggle('open');
-    nav.classList.toggle('open');
+  toggle.addEventListener("click", () => {
+    toggle.classList.toggle("open");
+    nav.classList.toggle("open");
     document.querySelector("body").classList.toggle("noscroll");
   });
 </script>

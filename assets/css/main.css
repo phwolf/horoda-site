@@ -2,7 +2,7 @@
   --pico-font-family: "Space Grotesk", sans-serif;
 }
 
-body {
+bodyx {
   background-image: url("background-picture.png");
   background-size: cover;       /* makes it fill the screen */
   background-position: center;  /* centers the image */
@@ -12,8 +12,14 @@ body {
   margin: 0;                    /* removes default body margin */
 }
 
+body {
+  height: 100vh;
+  background: #080D29;
+  background: linear-gradient(141deg, rgba(8, 13, 41, 1) 65%, rgba(42, 125, 181, 1) 83%, rgba(177, 181, 125, 1) 100%);
+}
+
 .emblem-wrap img {
-  height: 80px;
+  height: 65px;
 }
 
 .logo-wrap img {
@@ -25,7 +31,27 @@ body {
   color: white;
 }
 
+.nav-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  justify-content: space-around; /* space-around like flexbox */
+  align-items: center;
+  gap: 2rem; /* use Pico's spacing variable */
+  margin-inline: auto;
+  max-width: 800px; /* center grid */
+  width: 100%;
+}
 
+.nav-grid button {
+  width: 100%;
+}
+
+@media (max-width: 600px) {
+  .nav-grid {
+    grid-template-columns: 1fr;
+    justify-content: center;
+  }
+}
 
 /* === HORODA FUTURISTIC THEME === */
 
