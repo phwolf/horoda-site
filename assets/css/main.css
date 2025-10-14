@@ -2,11 +2,41 @@
   --pico-font-family: "Space Grotesk", sans-serif;
 }
 
+/* Orange color for light color scheme (Default) */
+/* Can be forced with data-theme="light" */
+[data-theme=light],
+:root:not([data-theme=dark]),
+:host:not([data-theme=dark]) {
+  --pico-primary: #21c4ea;
+  --pico-primary-hover: #d4f7ff;
+}
+
+/* Orange color for dark color scheme (Auto) */
+/* Automatically enabled if user has Dark mode enabled */
+@media only screen and (prefers-color-scheme: dark) {
+  :root:not([data-theme]),
+  :host:not([data-theme]) {
+    --pico-primary: #21c4ea;
+    --pico-primary-hover: #d4f7ff;
+  }
+}
+/* Orange color for dark color scheme (Forced) */
+/* Enabled if forced with data-theme="dark" */
+[data-theme=dark] {
+  --pico-primary: #21c4ea;
+  --pico-primary-hover: #d4f7ff;
+}
+
+a {
+  text-decoration: none;
+}
+
 html {
   scroll-behavior: smooth;
 }
 
-body {
+bodyx {
+  background: #080D29;
   background-image: url("background-picture.webp");
   background-size: cover;       /* makes it fill the screen */
   background-position: center;  /* centers the image */
@@ -22,15 +52,8 @@ h6 {
   text-transform: uppercase;
 }
 
-#product-grid a {
-  text-decoration: none;
-}
 
-#product-grid a p {
-  color: #21c4ea;
-}
-
-bodyx {
+body {
   margin: 0;
   min-height: 100dvh;
   height: 100%;
@@ -62,7 +85,7 @@ bodyx {
       #070d29 50%,
       #0a153f 100%
     );
-  background-attachment: fixed;
+  /* background-attachment: fixed; */
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -106,6 +129,7 @@ bodyx {
 @media (max-width: 600px) {
   .nav-grid {
     grid-template-columns: 1fr;
+    gap: 1rem;
     justify-content: center;
     padding-bottom: 0px;
   }

@@ -5,17 +5,21 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
-    
-    {{ $styles := resources.Get "css/main.css" | minify | fingerprint
-    }}
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+
+    {{ $styles := resources.Get "css/main.css" | minify | fingerprint }}
     <link rel="stylesheet" href="{{ $styles.RelPermalink }}" />
 
-    {{ $headerStyles := resources.Get "css/header.css" | minify | fingerprint
-    }}
+    {{ $headerStyles := resources.Get "css/header.css" | minify | fingerprint }}
     <link rel="stylesheet" href="{{ $headerStyles.RelPermalink }}" />
 
     <script>
@@ -33,9 +37,7 @@
     </script>
   </head>
   <body class="antialiased" data-theme="dark">
-    {{ if not .IsHome }}
-      {{ partial "header.html" . }}
-    {{ end }}
-    {{ block "main" . }}{{ .Content }}{{ end }}
+    {{ if not .IsHome }} {{ partial "header.html" . }} {{ end }} {{ block "main"
+    . }}{{ .Content }}{{ end }}
   </body>
 </html>
